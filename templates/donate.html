@@ -1,0 +1,34 @@
+{% extends "menu.html" %}
+{% block title %}index title{%endblock title%}
+
+{% block content %}
+
+ <script src="https://checkout.stripe.com/v2/checkout.js"></script>
+
+<div class="input-append">
+<input type="number" class="span2" id="amount">
+<span class="add-on">.00</span>
+<button id="donatebutton" class="btn btn-primary">Donate</button>
+</div>
+<script>
+$("#donatebutton").click(function(e) {
+  var token=function(res) {
+      console.log(res);
+      };
+
+      StripeCheckout.open({
+        key:         'pk_test_rktiyH1K9usDXFFyTwhqHccV',
+        address:     true,
+        amount:      $("#amount").val(),
+        name:        'CSTUY',
+        description: 'Donation to CSTUY',
+        panelLabel:  'Checkout',
+        token:       token
+      });
+
+      return false;
+    });
+
+
+</script>
+{% endblock content%}
