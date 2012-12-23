@@ -24,7 +24,7 @@ $("#donatebutton").click(function(e) {
       StripeCheckout.open({
         key:         'pk_test_rktiyH1K9usDXFFyTwhqHccV',
         address:     true,
-        amount:      $("#amount").val(),
+        amount:      parseInt($("#amount").val())*100,
         name:        'CSTUY',
         description: 'Donation to CSTUY',
         panelLabel:  'Checkout',
