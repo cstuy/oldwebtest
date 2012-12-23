@@ -3,41 +3,128 @@
 
 {% block content %}
 
-<div class="container-fluid">
-<div class="row">
-<div class="offset1">
-<h1>Who we are</h1>
-
-Computer Science and Technology for Urban Youth is an organization
-dedicated to promoting educational opportunities relating to computer
-science to high school and middle school students.
 
 
-</div>
+
+
+
+
+
+
+
+<div class="accordion" id="accordion2">
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+        <h2>About us</h2>
+      </a>
+    </div>
+    <div id="collapseOne" class="accordion-body collapse in">
+      <div class="accordion-inner">
+
+	<div class="row">
+	  <div class="offset1">
+	    Computer Science and Technology for Urban Youth is an organization
+	    dedicated to promoting educational opportunities relating to computer
+	    science to high school and middle school students.
+	  </div>
+	</div>
+
+
+
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+        <h2>Our Board</h2>
+      </a>
+    </div>
+    <div id="collapseTwo" class="accordion-body collapse">
+      <div class="accordion-inner">
+
+	<div class="row">
+	  <div class="span4 offset1">
+	    <ul class="thumbnails">
+	      {% for person in people %}
+	      <li id="{{person.blurb}}" class="span2 person">
+		<img style="height:150px" src="static/about/{{person.photo}}">
+		<p>{{person.name}}</p>
+	      </li>
+	      {% endfor %}
+	  </div>
+	  
+	  <div  class="span4 offset2">
+	    <div class="spacer50"></div>
+	    <div id="blurb">
+	    </div>
+	  </div>
+	</div>
+      </div>
+
+      </div>
+    </div>
+  </div>
 </div>
 
-<div class="row">
-<div class="span4 offset1">
-<h1> Our Board</h1>
-<ul class="thumbnails">
-{% for person in people %}
-<li id="{{person.blurb}}" class="span2 person">
-<img style="height:150px" src="static/about/{{person.photo}}">
-<p>{{person.name}}</p>
-</li>
-{% endfor %}
+
+
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
+        <h2>Our Partners</h2>
+      </a>
+    </div>
+    <div id="collapseThree" class="accordion-body collapse">
+      <div class="accordion-inner">
+
+	<div class="row">
+	  <div class="offset1">
+	    <ul>
+	      <li>Partner 1</li>
+	      <li>Partner 2</li>
+	      <li>Partner 3</li>
+
+	    </ul>
+	  </div>
+	</div>
+
+      </div>
+    </div>
+  </div>
 </div>
 
-<div  class="span4 offset2">
-<div class="spacer50"></div>
-<div id="blurb">
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFour">
+        <h2>Our Suporters</h2>
+      </a>
+    </div>
+    <div id="collapseFour" class="accordion-body collapse">
+      <div class="accordion-inner">
+
+	<div class="row">
+	  <div class="offset1">
+	    People who support us
+	  </div>
+	</div>
+
+      </div>
+    </div>
+  </div>
 </div>
-</div>
-</div>
-</div>
+
+
+
+
+
+
 
 <script>
 $(document).ready(function() {
+
   $(".person").hover(function(e) {
     var file="static/about/"+this.id;
     $("#blurb").fadeOut(function() {
@@ -45,7 +132,11 @@ $(document).ready(function() {
       });
    },function(e) {
           $("#blurb").fadeOut(function(){$("#blurb").empty();});
-     });});
+     });
+
+
+});
+
 </script>
 
 {% endblock content%}
