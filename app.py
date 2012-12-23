@@ -11,6 +11,7 @@ def index():
 def about():
     people=json.loads(open("static/about/about.json").read())
     return render_template("about.html",people=people)
+
 @app.route("/<template>")
 def index(template="index"):
     template=template+".html"
