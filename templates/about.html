@@ -1,0 +1,51 @@
+{% extends "menu.html" %}
+{% block title %}index title{%endblock title%}
+
+{% block content %}
+
+<div class="container-fluid">
+<div class="row">
+<div class="offset1">
+<h1>Who we are</h1>
+
+Computer Science and Technology for Urban Youth is an organization
+dedicated to promoting educational opportunities relating to computer
+science to high school and middle school students.
+
+
+</div>
+</div>
+
+<div class="row">
+<div class="span4 offset1">
+<h1> Our Board</h1>
+<ul class="thumbnails">
+{% for person in people %}
+<li id="{{person.blurb}}" class="span2 person">
+<img style="height:150px" src="static/about/{{person.photo}}">
+<p>{{person.name}}</p>
+</li>
+{% endfor %}
+</div>
+
+<div  class="span4 offset2">
+<div class="spacer50"></div>
+<div id="blurb">
+</div>
+</div>
+</div>
+</div>
+
+<script>
+$(document).ready(function() {
+  $(".person").hover(function(e) {
+    var file="static/about/"+this.id;
+    $("#blurb").fadeOut(function() {
+      $("#blurb").load(file,function() {$("#blurb").fadeIn()});
+      });
+   },function(e) {
+          $("#blurb").fadeOut(function(){$("#blurb").empty();});
+     });});
+</script>
+
+{% endblock content%}

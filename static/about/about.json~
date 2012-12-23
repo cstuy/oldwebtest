@@ -1,0 +1,25 @@
+{  "person": [ 
+   {"name":"Michael Zamansky"
+  ,"photo":"mike.jpg"
+  ,"blurb":"mike.txt"},
+
+
+  {"name":"JonAlf Dyrland-Weaver"
+  		,"photo":"jonalf.jpg"
+  		,"blurb":"jonalf.txt"},
+  
+  {"name":"Samuel Konstantinovich"
+  		,"photo":"sam.jpg"
+  		,"blurb":"sam.txt"},
+  
+{"name":"Jennifer Hsu"
+  ,"photo":"jen.jpg"
+  ,"blurb":"jen.txt"},
+
+{"name":"Artie Jordan"
+  ,"photo":"artie.jpg"
+  ,"blurb":"artie.txt"}
+
+]
+
+}
